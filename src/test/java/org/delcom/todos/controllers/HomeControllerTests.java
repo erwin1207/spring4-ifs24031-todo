@@ -1,4 +1,4 @@
-package org.delcom.starter.controllers;
+package org.delcom.todos.controllers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +20,7 @@ class HomeControllerUnitTest {
         String result = controller.hello();
 
         // Assert
-        assertEquals("Hay, selamat datang di aplikasi dengan Spring Boot!", result);
+        assertEquals("Hay, selamat datang di Spring Boot!", result);
     }
 
     // Test untuk metode sayHello()

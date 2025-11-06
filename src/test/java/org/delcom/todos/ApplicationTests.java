@@ -1,8 +1,6 @@
-package org.delcom.starter;
+package org.delcom.todos;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -13,7 +11,7 @@ class ApplicationTest {
 	
 	@Test
 	@Timeout(10)
-	void mainMethod_ShouldRunSpringApplication() {
+	void mainMethod_ShouldRunSpringApplication() throws Exception {
 		// Mock SpringApplication.run untuk test main method
 		try (var mockedSpring = mockStatic(SpringApplication.class)) {
 			ConfigurableApplicationContext mockContext = mock(ConfigurableApplicationContext.class);
@@ -29,24 +27,24 @@ class ApplicationTest {
 	}
 
 	@Test
-	void contextLoads_ShouldNotThrowException() {
+	void contextLoads_ShouldNotThrowException() throws Exception {
 		// Test bahwa Spring context bisa dimuat
 		assertDoesNotThrow(() -> {
 			// Test basic class loading
-			Class<?> clazz = Class.forName("org.delcom.starter.Application");
+			Class<?> clazz = Class.forName("org.delcom.todos.Application");
 			assertNotNull(clazz);
 		});
 	}
 
 	@Test
-	void todoApplication_ShouldHaveSpringBootAnnotation() {
+	void todoApplication_ShouldHaveSpringBootAnnotation() throws Exception {
 		// Test bahwa class memiliki annotation @SpringBootApplication
 		assertNotNull(Application.class
 				.getAnnotation(org.springframework.boot.autoconfigure.SpringBootApplication.class));
 	}
 
 	@Test
-	void todoApplication_CanBeInstantiated() {
+	void todoApplication_CanBeInstantiated() throws Exception {
 		// Test bahwa kita bisa membuat instance Application
 		assertDoesNotThrow(() -> {
 			Application app = new Application();

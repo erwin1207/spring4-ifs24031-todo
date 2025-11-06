@@ -1,4 +1,4 @@
-package org.delcom.starter.controllers;
+package org.delcom.todos.controllers;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -17,7 +17,8 @@ public class HomeController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hay, selamat datang di aplikasi dengan Spring Boot!";
+
+        return "Hay, selamat datang di Spring Boot!";
     }
 
     @GetMapping("/hello/{name}")
